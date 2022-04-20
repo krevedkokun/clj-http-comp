@@ -1,0 +1,18 @@
+{:paths ["dev" "src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.0"}
+
+        http-kit/http-kit {:mvn/version "2.6.0-alpha1"}
+
+        com.appsflyer/donkey {:mvn/version "0.5.2"}
+
+        org.immutant/web {:mvn/version "2.1.10"}
+
+        ring/ring-core {:mvn/version "1.9.5"}
+        ring/ring-jetty-adapter {:mvn/version "1.9.5"}}
+ :aliases
+ {:build {:deps {io.github.seancorfield/build-clj
+                 {:git/tag "v0.6.3" :git/sha "9b8e09b"
+                  ;; since we're building an app uberjar, we do not
+                  ;; need deps-deploy for clojars.org deployment:
+                  :deps/root "slim"}}
+          :ns-default build}}}
